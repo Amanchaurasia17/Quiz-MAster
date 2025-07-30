@@ -1,0 +1,11 @@
+# Nixpacks configuration for Railway deployment
+# This configures Railway to deploy only the backend server
+
+[phases.install]
+cmd = "npm install"
+
+[phases.build]
+cmd = "echo 'Backend build complete'"
+
+[start]
+cmd = "node server.js"
