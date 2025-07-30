@@ -305,8 +305,8 @@ router.get('/admin/all', protect, adminOnly, async (req, res) => {
 
 // @route   POST /api/quizzes/generate
 // @desc    Generate quiz from Open Trivia DB API
-// @access  Admin
-router.post('/generate', protect, adminOnly, async (req, res) => {
+// @access  Private (Any logged-in user)
+router.post('/generate', protect, async (req, res) => {
   try {
     const {
       title,
@@ -376,8 +376,8 @@ router.post('/generate', protect, adminOnly, async (req, res) => {
 
 // @route   GET /api/quizzes/trivia-categories
 // @desc    Get available categories from Open Trivia DB
-// @access  Admin
-router.get('/trivia-categories', protect, adminOnly, async (req, res) => {
+// @access  Private (Any logged-in user)
+router.get('/trivia-categories', protect, async (req, res) => {
   try {
     const categories = await openTriviaService.getCategories();
     
