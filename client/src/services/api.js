@@ -6,6 +6,8 @@ const API = axios.create({
   timeout: 10000,
 });
 
+console.log('API Base URL:', API.defaults.baseURL);
+
 // Request interceptor to add auth token
 API.interceptors.request.use(
   (config) => {

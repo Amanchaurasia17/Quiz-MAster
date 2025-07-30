@@ -3,8 +3,13 @@ import API from './api';
 export const quizService = {
   // Get all quizzes
   getQuizzes: async (params = {}) => {
-    const response = await API.get('/quizzes', { params });
-    return response.data.data.quizzes; // Extract quizzes from nested response
+    try {
+      const response = await API.get('/quizzes', { params });
+      return response.data.data.quizzes; // Extract quizzes from nested response
+    } catch (error) {
+      console.error('Quiz service error:', error);
+      throw new Error(error.response?.data?.message || 'Failed to fetch quizzes');
+    }
   },
 
   // Get specific quiz
@@ -49,10 +54,15 @@ export const quizService = {
     return response.data.data.quizzes; // Extract quizzes from nested response
   },
 
-  // Generate quiz from Open Trivia DB API (admin only)
+  // Generate quiz from Open Trivia DB API
   generateQuiz: async (quizData) => {
-    const response = await API.post('/quizzes/generate', quizData);
-    return response.data; // Return full response including success message
+    try {
+      const response = await API.post('/quizzes/generate', quizData);
+      return response.data; // Return full response including success message
+    } catch (error) {
+      console.error('Generate quiz error:', error);
+      throw new Error(error.response?.data?.message || 'Failed to generate quiz');
+    }
   },
 
   // Get trivia categories from Open Trivia DB
