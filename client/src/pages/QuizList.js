@@ -19,8 +19,11 @@ const QuizList = () => {
   const fetchQuizzes = async () => {
     try {
       setLoading(true);
+      console.log('Fetching quizzes...');
       const response = await quizService.getQuizzes();
+      console.log('Quizzes response:', response);
       setQuizzes(response);
+      setError(''); // Clear any previous errors
     } catch (error) {
       console.error('Error fetching quizzes:', error);
       setError('Failed to load quizzes. Please try again later.');
