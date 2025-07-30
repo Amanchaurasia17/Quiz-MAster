@@ -1,0 +1,157 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Variants */
+.btn--primary {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btn--primary:hover:not(.btn--disabled) {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.btn--secondary {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.btn--secondary:hover:not(.btn--disabled) {
+  background: #e5e7eb;
+  border-color: #9ca3af;
+}
+
+.btn--success {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+.btn--success:hover:not(.btn--disabled) {
+  background: linear-gradient(135deg, #059669, #047857);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.btn--danger {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+}
+
+.btn--danger:hover:not(.btn--disabled) {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.btn--outline {
+  background: transparent;
+  color: #3b82f6;
+  border: 2px solid #3b82f6;
+}
+
+.btn--outline:hover:not(.btn--disabled) {
+  background: #3b82f6;
+  color: white;
+}
+
+.btn--ghost {
+  background: transparent;
+  color: #6b7280;
+  padding: 8px 12px;
+}
+
+.btn--ghost:hover:not(.btn--disabled) {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* Sizes */
+.btn--small {
+  padding: 6px 12px;
+  font-size: 0.875rem;
+  gap: 4px;
+}
+
+.btn--medium {
+  padding: 10px 20px;
+  font-size: 1rem;
+  gap: 6px;
+}
+
+.btn--large {
+  padding: 14px 28px;
+  font-size: 1.125rem;
+  gap: 8px;
+}
+
+/* States */
+.btn--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.btn--loading {
+  cursor: wait;
+}
+
+.btn__spinner {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.btn__text--loading {
+  opacity: 0.7;
+}
+
+/* Spinner animation */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .btn--large {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+  
+  .btn--medium {
+    padding: 8px 16px;
+    font-size: 0.875rem;
+  }
+}
