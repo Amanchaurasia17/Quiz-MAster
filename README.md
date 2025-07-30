@@ -523,6 +523,6 @@ Created as part of a **Software Engineer Intern assignment for CausalFunnel**, t
 
 **Live Demo**: [Quiz Master App](https://quizprepare.netlify.app) | **API**: [Backend Service](https://quiz-master-production-3a8f.up.railway.app)
 
-*Developed for CausalFunnel Software Engineer Intern Assignment*
+
 
 </div>
