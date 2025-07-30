@@ -26,9 +26,14 @@ const Header = () => {
               Quizzes
             </Link>
             {isAuthenticated && (
-              <Link to="/dashboard" className="header__link">
-                Dashboard
-              </Link>
+              <>
+                <Link to="/dashboard" className="header__link">
+                  Dashboard
+                </Link>
+                <Link to="/quizzes/generate" className="header__link">
+                  Generate Quiz
+                </Link>
+              </>
             )}
           </nav>
 
