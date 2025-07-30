@@ -22,7 +22,7 @@ import AdminDashboard from './pages/admin/AdminDashboard';
 import QuizManagement from './pages/admin/QuizManagement';
 import CreateQuiz from './pages/admin/CreateQuiz';
 import EditQuiz from './pages/admin/EditQuiz';
-import GenerateQuiz from './components/admin/GenerateQuiz';
+import GenerateQuiz from './components/GenerateQuiz';
 
 import './App.css';
 
@@ -59,6 +59,12 @@ function App() {
                 </PrivateRoute>
               } />
               
+              <Route path="/quizzes/generate" element={
+                <PrivateRoute>
+                  <GenerateQuiz />
+                </PrivateRoute>
+              } />
+              
               <Route path="/profile" element={
                 <PrivateRoute>
                   <Profile />
@@ -81,12 +87,6 @@ function App() {
               <Route path="/admin/quizzes/create" element={
                 <AdminRoute>
                   <CreateQuiz />
-                </AdminRoute>
-              } />
-              
-              <Route path="/admin/quizzes/generate" element={
-                <AdminRoute>
-                  <GenerateQuiz />
                 </AdminRoute>
               } />
               
