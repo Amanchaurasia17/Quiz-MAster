@@ -136,7 +136,14 @@ const Dashboard = () => {
           <div className="dashboard__section">
             <div className="section-header">
               <h2>🚀 Recent Quizzes</h2>
-              <Link to="/quizzes" className="view-all-link">View All</Link>
+              <div className="section-actions">
+                {user && (
+                  <Link to="/quizzes/generate" className="btn btn-primary">
+                    🎲 Generate Quiz
+                  </Link>
+                )}
+                <Link to="/quizzes" className="view-all-link">View All</Link>
+              </div>
             </div>
             <div className="quiz-grid">
               {recentQuizzes.length > 0 ? (
@@ -164,7 +171,14 @@ const Dashboard = () => {
               ) : (
                 <div className="no-quizzes">
                   <p>No quizzes available at the moment.</p>
-                  <Link to="/quizzes" className="btn btn-outline">Browse Quizzes</Link>
+                  <div className="no-quizzes-actions">
+                    {user && (
+                      <Link to="/quizzes/generate" className="btn btn-primary">
+                        🎲 Generate Your First Quiz
+                      </Link>
+                    )}
+                    <Link to="/quizzes" className="btn btn-outline">Browse Quizzes</Link>
+                  </div>
                 </div>
               )}
             </div>

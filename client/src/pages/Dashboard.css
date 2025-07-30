@@ -82,6 +82,12 @@
   margin-bottom: 24px;
 }
 
+.section-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .section-header h2 {
   font-size: 1.5rem;
   font-weight: 600;
@@ -223,6 +229,14 @@
   text-align: center;
   padding: 40px;
   color: #718096;
+}
+
+.no-quizzes-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 .results-list {
