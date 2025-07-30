@@ -30,21 +30,13 @@ app.use(limiter);
 const allowedOrigins = process.env.NODE_ENV === 'production' 
   ? [
       process.env.FRONTEND_URL,
-      'https://quizprepare.netlify.app' // Your actual Netlify domain
+      'https://quizprepare.netlify.app',
+      'https://quiz-master-production-3a8f.up.railway.app'
     ]
   : ['http://localhost:3000', 'http://127.0.0.1:3000'];
 
 app.use(cors({
-  origin: function (origin, callback) {
-    // Allow requests with no origin (mobile apps, etc.)
-    if (!origin) return callback(null, true);
-    
-    if (allowedOrigins.includes(origin)) {
-      return callback(null, true);
-    } else {
-      return callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: true, // Allow all origins temporarily for debugging
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
